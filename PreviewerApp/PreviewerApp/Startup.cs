@@ -1,3 +1,7 @@
+// <copyright file="Startup.cs" company="HTML Reviewer">
+// Copyright (c) HTML Reviewer. All rights reserved.
+// </copyright>
+
 namespace PreviewerApp
 {
     using System;
