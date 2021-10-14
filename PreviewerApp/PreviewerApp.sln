@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreviewerApp", "PreviewerApp\PreviewerApp.csproj", "{2982A6E7-D24B-47E0-9AC9-96C850F9E4EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2982A6E7-D24B-47E0-9AC9-96C850F9E4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2982A6E7-D24B-47E0-9AC9-96C850F9E4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2982A6E7-D24B-47E0-9AC9-96C850F9E4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2982A6E7-D24B-47E0-9AC9-96C850F9E4EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DE23C3E-0C5A-4C0D-8480-D353A85889EF}
+	EndGlobalSection
+EndGlobal
