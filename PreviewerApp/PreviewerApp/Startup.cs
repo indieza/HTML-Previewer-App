@@ -18,6 +18,7 @@ namespace PreviewerApp
     using Microsoft.Extensions.Hosting;
 
     using PreviewerApp.Data;
+    using PreviewerApp.Services.CreateHtmlRecordServices;
 
     public class Startup
     {
@@ -31,8 +32,12 @@ namespace PreviewerApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Register Application DB Context
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
+
+            // Register Logic Services
+            services.AddTransient<ICreateHtmlRecordService, CreateHtmlRecordService>();
 
             services.AddControllersWithViews();
         }

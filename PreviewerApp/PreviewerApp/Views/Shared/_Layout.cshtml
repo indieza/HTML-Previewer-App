@@ -28,7 +28,10 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            <div class="container">
+                <partial name="_TempDataPartial" />
+                @RenderBody()
+            </div>
         </main>
     </div>
 

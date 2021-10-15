@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\HtmlRecord\ViewModels\" />
   </ItemGroup>
 
 </Project>
