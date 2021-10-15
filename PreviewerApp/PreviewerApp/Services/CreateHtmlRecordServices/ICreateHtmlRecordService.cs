@@ -13,6 +13,6 @@ namespace PreviewerApp.Services.CreateHtmlRecordServices
 
     public interface ICreateHtmlRecordService
     {
-        Task<Tuple<bool, string>> CreateHtmlRecord(CreateHtmlRecordInputModel model);
+        Task<Tuple<bool, string>> CreateHtmlRecord(CreateHtmlRecordInputModel model, string basePath);
     }
 }

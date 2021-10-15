@@ -55,5 +55,7 @@ function CheckInputHtml() {
 }
 
 $(document).ready(function () {
-    $('#htmlRecords').DataTable();
+    $('#htmlRecords').DataTable({
+        scrollY: 300
+    });
 });

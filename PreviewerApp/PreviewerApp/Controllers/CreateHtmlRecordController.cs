@@ -38,7 +38,8 @@ namespace PreviewerApp.Controllers
         {
             if (this.ModelState.IsValid)
             {
-                Tuple<bool, string> result = await this.createHtmlRecordService.CreateHtmlRecord(model);
+                var basePath = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
+                Tuple<bool, string> result = await this.createHtmlRecordService.CreateHtmlRecord(model, basePath);
 
                 if (result.Item1)
                 {

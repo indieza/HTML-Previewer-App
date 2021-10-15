@@ -27,7 +27,9 @@ namespace PreviewerApp.Services.HomeServices
 
         public List<HtmlRecordViewModel> GetAllHtmlRecords()
         {
-            var htmlRecords = this.db.HtmlRecords.ToList();
+            var htmlRecords = this.db.HtmlRecords
+                .OrderByDescending(x => x.UpdatedOn)
+                .ToList();
             var model = this.mapper.Map<List<HtmlRecordViewModel>>(htmlRecords);
             return model;
         }

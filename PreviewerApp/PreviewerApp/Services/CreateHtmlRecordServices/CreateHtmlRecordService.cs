@@ -26,20 +26,22 @@ namespace PreviewerApp.Services.CreateHtmlRecordServices
             this.db = db;
         }
 
-        public async Task<Tuple<bool, string>> CreateHtmlRecord(CreateHtmlRecordInputModel model)
+        public async Task<Tuple<bool, string>> CreateHtmlRecord(CreateHtmlRecordInputModel model, string basePath)
         {
             if (this.db.HtmlRecords.Any(GlobalConstants.CheckHtmlRecord(model.HtmlSanitizedContent)))
             {
                 return Tuple.Create(false, ErrorMessages.HtmlAlreadyRecordExist);
             }
 
-            this.db.HtmlRecords.Add(new HtmlRecord
+            var record = new HtmlRecord
             {
                 Html = model.HtmlSanitizedContent,
                 CreatedOn = model.CreatedOn,
                 UpdatedOn = model.UpdatedOn,
-            });
+            };
+            record.ShareableUrl = $"{basePath}/HtmlRecordPreview/{record.Id}";
 
+            this.db.HtmlRecords.Add(record);
             await this.db.SaveChangesAsync();
             return Tuple.Create(true, SuccessfulMessages.SuccessfullyCreateHtmlRecord);
         }
