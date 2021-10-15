@@ -11,6 +11,7 @@ namespace PreviewerApp.Services.CheckHtmlRecordServices
 
     using Ganss.XSS;
 
+    using PreviewerApp.Attributes;
     using PreviewerApp.Constraints;
     using PreviewerApp.Data;
 
@@ -26,7 +27,7 @@ namespace PreviewerApp.Services.CheckHtmlRecordServices
         public string Check(string html)
         {
             var sanitizedHtml = new HtmlSanitizer().Sanitize(html);
-            return this.db.HtmlRecords.Any(x => x.Html == sanitizedHtml) ?
+            return this.db.HtmlRecords.Any(GlobalConstants.CheckHtmlRecord(sanitizedHtml)) ?
                 ErrorMessages.HtmlRecordExist :
                 SuccessfulMessages.HtnlRecordDoesNotExist;
         }

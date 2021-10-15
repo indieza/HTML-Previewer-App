@@ -43,13 +43,15 @@ namespace PreviewerApp.Controllers
                 if (result.Item1)
                 {
                     this.TempData["Success"] = result.Item2;
+                    return this.RedirectToAction(
+                        "Index",
+                        nameof(CreateHtmlRecordController).Replace("Controller", string.Empty));
                 }
                 else
                 {
                     this.TempData["Error"] = result.Item2;
+                    return this.View();
                 }
-
-                return this.RedirectToAction("Index", nameof(CreateHtmlRecordController).Replace("Controller", string.Empty));
             }
 
             this.TempData["Error"] = ErrorMessages.InvalidInputModel;

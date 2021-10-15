@@ -11,6 +11,7 @@ namespace PreviewerApp.Services.CreateHtmlRecordServices
 
     using HtmlAgilityPack;
 
+    using PreviewerApp.Attributes;
     using PreviewerApp.Constraints;
     using PreviewerApp.Data;
     using PreviewerApp.Models;
@@ -27,6 +28,11 @@ namespace PreviewerApp.Services.CreateHtmlRecordServices
 
         public async Task<Tuple<bool, string>> CreateHtmlRecord(CreateHtmlRecordInputModel model)
         {
+            if (this.db.HtmlRecords.Any(GlobalConstants.CheckHtmlRecord(model.HtmlSanitizedContent)))
+            {
+                return Tuple.Create(false, ErrorMessages.HtmlAlreadyRecordExist);
+            }
+
             this.db.HtmlRecords.Add(new HtmlRecord
             {
                 Html = model.HtmlSanitizedContent,
