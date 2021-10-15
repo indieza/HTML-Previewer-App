@@ -13,7 +13,7 @@
         <form asp-area="" asp-controller="Home" asp-action="Index" method="post">
             <div class="form-group">
                 <label asp-for="@this.Model.Html"></label>
-                <textarea asp-for="@this.Model.Html" class="form-control" rows="10"></textarea>
+                <textarea asp-for="@this.Model.Html" oninput="StartInputHtml()" id="htmlInputField" class="form-control" rows="10"></textarea>
                 <span asp-validation-for="@this.Model.Html" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-primary">
