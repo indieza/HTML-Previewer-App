@@ -16,5 +16,9 @@ namespace PreviewerApp.Constraints
         public const string HtmlRecordExist = "<p style=\"color: red;\">HTML record already exist!</p>";
 
         public const string HtmlAlreadyRecordExist = "HTML record already Exist!";
+
+        public const string InvalidHtmlFileSize = "Inserted HTML code should be less than {0} MB";
+
+        public const string InvalidHtmlFormat = "Invalid HTML format";
     }
 }

@@ -10,14 +10,20 @@ namespace PreviewerApp.Attributes
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Ganss.XSS;
+
     using HtmlAgilityPack;
 
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public class HtmlValidationAttribute : ValidationAttribute
     {
+        public HtmlValidationAttribute()
+        {
+        }
+
         public override bool IsValid(object value)
         {
-            string html = (string)value;
+            string html = new HtmlSanitizer().Sanitize((string)value);
 
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);

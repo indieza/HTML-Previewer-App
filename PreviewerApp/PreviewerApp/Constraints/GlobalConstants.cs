@@ -2,7 +2,7 @@
 // Copyright (c) HTML Reviewer. All rights reserved.
 // </copyright>
 
-namespace PreviewerApp.Attributes
+namespace PreviewerApp.Constraints
 {
     using System;
     using System.Collections.Generic;
@@ -14,6 +14,8 @@ namespace PreviewerApp.Attributes
 
     public class GlobalConstants
     {
+        public const float MaxHtmlFileSizeInMegabytes = 5.0f;
+
         public static Expression<Func<HtmlRecord, bool>> CheckHtmlRecord(string compareHtml)
         {
             return record => record.Html == compareHtml;

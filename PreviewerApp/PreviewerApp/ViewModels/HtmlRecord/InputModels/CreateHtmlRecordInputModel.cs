@@ -13,11 +13,13 @@ namespace PreviewerApp.ViewModels.HtmlRecord.InputModels
     using Ganss.XSS;
 
     using PreviewerApp.Attributes;
+    using PreviewerApp.Constraints;
 
     public class CreateHtmlRecordInputModel
     {
         [Required]
-        [HtmlValidation(ErrorMessage = "Invalid HTML format")]
+        [HtmlValidation(ErrorMessage = ErrorMessages.InvalidHtmlFormat)]
+        [HtmlSizeValidation(GlobalConstants.MaxHtmlFileSizeInMegabytes, ErrorMessage = ErrorMessages.InvalidHtmlFileSize)]
         [Display(Name = "HTML Code")]
         public string Html { get; set; }
 
