@@ -19,6 +19,7 @@ namespace PreviewerApp
 
     using PreviewerApp.Data;
     using PreviewerApp.Services.CreateHtmlRecordServices;
+    using PreviewerApp.Services.PreviewHtmlRecordServices;
 
     public class Startup
     {
@@ -36,8 +37,14 @@ namespace PreviewerApp
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddAntiforgery(options =>
+            {
+                options.HeaderName = "X-CSRF-TOKEN";
+            });
+
             // Register Logic Services
             services.AddTransient<ICreateHtmlRecordService, CreateHtmlRecordService>();
+            services.AddTransient<IPreviewHtmlRecordService, PreviewHtmlRecordService>();
 
             services.AddControllersWithViews();
         }
