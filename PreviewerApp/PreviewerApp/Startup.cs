@@ -18,6 +18,7 @@ namespace PreviewerApp
     using Microsoft.Extensions.Hosting;
 
     using PreviewerApp.Data;
+    using PreviewerApp.Services.CheckHtmlRecordServices;
     using PreviewerApp.Services.CreateHtmlRecordServices;
     using PreviewerApp.Services.PreviewHtmlRecordServices;
 
@@ -45,6 +46,7 @@ namespace PreviewerApp
             // Register Logic Services
             services.AddTransient<ICreateHtmlRecordService, CreateHtmlRecordService>();
             services.AddTransient<IPreviewHtmlRecordService, PreviewHtmlRecordService>();
+            services.AddTransient<ICheckHtmlRecordService, CheckHtmlRecordService>();
 
             services.AddControllersWithViews();
         }

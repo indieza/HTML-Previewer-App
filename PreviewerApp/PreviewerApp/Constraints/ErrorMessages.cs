@@ -12,5 +12,7 @@ namespace PreviewerApp.Constraints
     public class ErrorMessages
     {
         public const string InvalidInputModel = "Invalid input model!";
+
+        public const string HtmlRecordExist = "<p style=\"color: red;\">HTML record already exist!</p>";
     }
 }

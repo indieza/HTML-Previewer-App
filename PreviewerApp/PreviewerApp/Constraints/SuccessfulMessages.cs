@@ -12,5 +12,7 @@ namespace PreviewerApp.Constraints
     public class SuccessfulMessages
     {
         public const string SuccessfullyCreateHtmlRecord = "Successfully create a HTML Record.";
+
+        public const string HtnlRecordDoesNotExist = "<p style=\"color: green;\">HTML record does not exist yet.</p>";
     }
 }
