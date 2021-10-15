@@ -10,11 +10,16 @@ namespace PreviewerApp.ViewModels.HtmlRecord.InputModels
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Ganss.XSS;
+
     public class CreateHtmlRecordInputModel
     {
         [Required]
         [Display(Name = "HTML Code")]
         public string Html { get; set; }
+
+        [Required]
+        public string HtmlSanitizedContent => new HtmlSanitizer().Sanitize(this.Html);
 
         [Required]
         public DateTime CreatedOn => DateTime.UtcNow;

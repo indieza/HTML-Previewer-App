@@ -9,7 +9,9 @@ namespace PreviewerApp.Services.CreateHtmlRecordServices
     using System.Linq;
     using System.Threading.Tasks;
 
+    using PreviewerApp.Constraints;
     using PreviewerApp.Data;
+    using PreviewerApp.Models;
     using PreviewerApp.ViewModels.HtmlRecord.InputModels;
 
     public class CreateHtmlRecordService : ICreateHtmlRecordService
@@ -23,7 +25,15 @@ namespace PreviewerApp.Services.CreateHtmlRecordServices
 
         public async Task<Tuple<bool, string>> CreateHtmlRecord(CreateHtmlRecordInputModel model)
         {
-            throw new NotImplementedException();
+            this.db.HtmlRecords.Add(new HtmlRecord
+            {
+                Html = model.HtmlSanitizedContent,
+                CreatedOn = model.CreatedOn,
+                UpdatedOn = model.UpdatedOn,
+            });
+
+            await this.db.SaveChangesAsync();
+            return Tuple.Create(true, SuccessfulMessages.SuccessfullyCreateHtmlRecord);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿function StartInputHtml() {
+﻿function PreviewInputHtml() {
     let field = document.getElementById("htmlInputField");
-    alert(field.value);
+    document.getElementById("HtmlPreviewerDiv").innerHTML = field.value;
 }
