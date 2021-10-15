@@ -9,6 +9,8 @@ namespace PreviewerApp
     using System.Linq;
     using System.Threading.Tasks;
 
+    using AutoMapper;
+
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.HttpsPolicy;
@@ -17,6 +19,7 @@ namespace PreviewerApp
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
 
+    using PreviewerApp.AutoMapperProfiles;
     using PreviewerApp.Data;
     using PreviewerApp.Services.CheckHtmlRecordServices;
     using PreviewerApp.Services.CreateHtmlRecordServices;
@@ -48,6 +51,13 @@ namespace PreviewerApp
             services.AddTransient<IPreviewHtmlRecordService, PreviewHtmlRecordService>();
             services.AddTransient<ICheckHtmlRecordService, CheckHtmlRecordService>();
 
+            // Setup AutoMapper Profiles Configurations
+            services.AddScoped(provider => new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new HtmlRecordProfile());
+            }).CreateMapper());
+
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
         }
 
