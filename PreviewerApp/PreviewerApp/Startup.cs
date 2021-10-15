@@ -23,6 +23,7 @@ namespace PreviewerApp
     using PreviewerApp.Data;
     using PreviewerApp.Services.CheckHtmlRecordServices;
     using PreviewerApp.Services.CreateHtmlRecordServices;
+    using PreviewerApp.Services.HomeServices;
     using PreviewerApp.Services.PreviewHtmlRecordServices;
 
     public class Startup
@@ -50,6 +51,7 @@ namespace PreviewerApp
             services.AddTransient<ICreateHtmlRecordService, CreateHtmlRecordService>();
             services.AddTransient<IPreviewHtmlRecordService, PreviewHtmlRecordService>();
             services.AddTransient<ICheckHtmlRecordService, CheckHtmlRecordService>();
+            services.AddTransient<IHomeService, HomeService>();
 
             // Setup AutoMapper Profiles Configurations
             services.AddScoped(provider => new MapperConfiguration(cfg =>

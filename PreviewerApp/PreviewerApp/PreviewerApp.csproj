@@ -32,8 +32,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\HtmlRecord\ViewModels\" />
-  </ItemGroup>
-
 </Project>

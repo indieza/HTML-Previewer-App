@@ -53,3 +53,7 @@ function CheckInputHtml() {
         document.getElementById("HtmlPreviewerDiv").innerHTML = "";
     }
 }
+
+$(document).ready(function () {
+    $('#htmlRecords').DataTable();
+});

@@ -11,10 +11,14 @@ namespace PreviewerApp.AutoMapperProfiles
 
     using AutoMapper;
 
+    using PreviewerApp.Models;
+    using PreviewerApp.ViewModels.HtmlRecord.ViewModels;
+
     public class HtmlRecordProfile : Profile
     {
         public HtmlRecordProfile()
         {
+            this.CreateMap<HtmlRecord, HtmlRecordViewModel>();
         }
     }
 }
