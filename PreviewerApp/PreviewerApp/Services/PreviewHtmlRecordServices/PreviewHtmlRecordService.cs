@@ -11,6 +11,8 @@ namespace PreviewerApp.Services.PreviewHtmlRecordServices
 
     using Ganss.XSS;
 
+    using HtmlAgilityPack;
+
     public class PreviewHtmlRecordService : IPreviewHtmlRecordService
     {
         public PreviewHtmlRecordService()
@@ -19,6 +21,14 @@ namespace PreviewerApp.Services.PreviewHtmlRecordServices
 
         public string SanitizeHtml(string html)
         {
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(html);
+
+            if (htmlDoc.ParseErrors.Any())
+            {
+                return "<p>Invalid HTML Format.</p>";
+            }
+
             return new HtmlSanitizer().Sanitize(html);
         }
     }

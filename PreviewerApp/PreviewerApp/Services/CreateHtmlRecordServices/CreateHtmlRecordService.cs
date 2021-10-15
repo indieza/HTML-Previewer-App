@@ -9,6 +9,8 @@ namespace PreviewerApp.Services.CreateHtmlRecordServices
     using System.Linq;
     using System.Threading.Tasks;
 
+    using HtmlAgilityPack;
+
     using PreviewerApp.Constraints;
     using PreviewerApp.Data;
     using PreviewerApp.Models;

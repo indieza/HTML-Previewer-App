@@ -21,5 +21,7 @@
                 console.error(msg);
             }
         });
+    } else {
+        document.getElementById("HtmlPreviewerDiv").innerHTML = "";
     }
 }

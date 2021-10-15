@@ -53,7 +53,7 @@ namespace PreviewerApp.Controllers
             }
 
             this.TempData["Error"] = ErrorMessages.InvalidInputModel;
-            return this.RedirectToAction("Index", nameof(CreateHtmlRecordController).Replace("Controller", string.Empty));
+            return this.View();
         }
     }
 }
