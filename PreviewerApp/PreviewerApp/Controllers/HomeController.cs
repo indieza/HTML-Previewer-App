@@ -4,16 +4,11 @@
 
 namespace PreviewerApp.Controllers
 {
-    using System;
     using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
 
-    using PreviewerApp.Constraints;
-    using PreviewerApp.Services.CreateHtmlRecordServices;
     using PreviewerApp.Services.HomeServices;
-    using PreviewerApp.ViewModels.HtmlRecord.InputModels;
     using PreviewerApp.ViewModels.HtmlRecord.ViewModels;
 
     public class HomeController : Controller

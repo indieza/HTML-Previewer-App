@@ -4,11 +4,6 @@
 
 namespace PreviewerApp.Services.PreviewHtmlRecordServices
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-
     public interface IPreviewHtmlRecordService
     {
         string SanitizeHtml(string html);

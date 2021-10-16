@@ -5,12 +5,8 @@
 namespace PreviewerApp.Attributes
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
-    using System.Threading.Tasks;
-
-    using Ganss.XSS;
 
     using HtmlAgilityPack;
 
@@ -23,8 +19,7 @@ namespace PreviewerApp.Attributes
 
         public override bool IsValid(object value)
         {
-            string html = new HtmlSanitizer().Sanitize((string)value);
-
+            string html = (string)value;
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
 

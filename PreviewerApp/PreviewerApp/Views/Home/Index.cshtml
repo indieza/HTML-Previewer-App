@@ -33,9 +33,7 @@
                     @htmlRecord.UpdatedOn.ToLocalTime().ToString("dd-MM-yyyy")
                 </td>
                 <td width="130px">
-                    <a href="@htmlRecord.ShareableUrl" target="_blank">
-                        Link
-                    </a>
+                    <input type="button" class="btn btn-primary" value="Copy Link" onclick="CopyLink('@htmlRecord.ShareableUrl')" />
                 </td>
                 <td width="400px">
                     <div style="max-height: 50px; overflow-y: scroll;">
@@ -43,12 +41,12 @@
                     </div>
                 </td>
                 <td width="130px">
-                    <button class="btn btn-info">
-                        Edit
-                    </button>
-                    <button class="btn btn-success" onclick="window.open('@htmlRecord.ShareableUrl', '_blank')">
-                        Preview
-                    </button>
+                    <a asp-area="" asp-controller="EditHtmlRecord" asp-action="Index" asp-route-id="@htmlRecord.Id">
+                        <input type="button" value="Edit" class="btn btn-info" />
+                    </a>
+                    <a href="@htmlRecord.ShareableUrl" target="_blank">
+                        <input type="button" value="View" class="btn btn-success" />
+                    </a>
                 </td>
             </tr>
         }

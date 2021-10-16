@@ -1,0 +1,24 @@
+﻿@model HtmlRecordPreviewViewModel
+
+@{
+    ViewData["Title"] = "Create Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Preview HTML</h1>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        Created On: @this.Model.CreatedOn.ToLocalTime().ToString("dd-MM-yyyy hh:mm:ss tt")
+    </div>
+    <div class="col-md-6">
+        Updated On: @this.Model.UpdatedOn.ToLocalTime().ToString("dd-MM-yyyy hh:mm:ss tt")
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        @Html.Raw(this.Model.Html)
+    </div>
+</div>

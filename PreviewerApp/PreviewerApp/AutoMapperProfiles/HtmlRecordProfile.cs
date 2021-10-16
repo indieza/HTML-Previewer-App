@@ -4,14 +4,10 @@
 
 namespace PreviewerApp.AutoMapperProfiles
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-
     using AutoMapper;
 
     using PreviewerApp.Models;
+    using PreviewerApp.ViewModels.HtmlRecord.InputModels;
     using PreviewerApp.ViewModels.HtmlRecord.ViewModels;
 
     public class HtmlRecordProfile : Profile
@@ -19,6 +15,8 @@ namespace PreviewerApp.AutoMapperProfiles
         public HtmlRecordProfile()
         {
             this.CreateMap<HtmlRecord, HtmlRecordViewModel>();
+            this.CreateMap<HtmlRecord, EditHtmlRecordInputModel>();
+            this.CreateMap<HtmlRecord, HtmlRecordPreviewViewModel>();
         }
     }
 }

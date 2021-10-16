@@ -59,3 +59,13 @@ $(document).ready(function () {
         scrollY: 300
     });
 });
+
+function CopyLink(link) {
+    var inputTag = document.body.appendChild(document.createElement("input"));
+    inputTag.value = link;
+    inputTag.focus();
+    inputTag.select();
+    document.execCommand('copy');
+    inputTag.parentNode.removeChild(inputTag);
+    alert("URL Copied.");
+}

@@ -1,4 +1,4 @@
-﻿// <copyright file="CreateHtmlRecordInputModel.cs" company="HTML Reviewer">
+﻿// <copyright file="EditHtmlRecordInputModel.cs" company="HTML Reviewer">
 // Copyright (c) HTML Reviewer. All rights reserved.
 // </copyright>
 
@@ -12,8 +12,11 @@ namespace PreviewerApp.ViewModels.HtmlRecord.InputModels
     using PreviewerApp.Attributes;
     using PreviewerApp.Constraints;
 
-    public class CreateHtmlRecordInputModel
+    public class EditHtmlRecordInputModel
     {
+        [Required]
+        public string Id { get; set; }
+
         [Required]
         [HtmlValidation(ErrorMessage = ErrorMessages.InvalidHtmlFormat)]
         [HtmlSizeValidation(GlobalConstants.MaxHtmlFileSizeInMegabytes, ErrorMessage = ErrorMessages.InvalidHtmlFileSize)]
@@ -22,9 +25,6 @@ namespace PreviewerApp.ViewModels.HtmlRecord.InputModels
 
         [Required]
         public string HtmlSanitizedContent => new HtmlSanitizer().Sanitize(this.Html);
-
-        [Required]
-        public DateTime CreatedOn => DateTime.UtcNow;
 
         [Required]
         public DateTime UpdatedOn => DateTime.UtcNow;

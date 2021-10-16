@@ -4,13 +4,12 @@
 
 namespace PreviewerApp.Services.HomeServices
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
 
     using AutoMapper;
 
+    using PreviewerApp.Constraints;
     using PreviewerApp.Data;
     using PreviewerApp.ViewModels.HtmlRecord.ViewModels;
 
@@ -28,7 +27,7 @@ namespace PreviewerApp.Services.HomeServices
         public List<HtmlRecordViewModel> GetAllHtmlRecords()
         {
             var htmlRecords = this.db.HtmlRecords
-                .OrderByDescending(x => x.UpdatedOn)
+                .OrderByDescending(GlobalConstants.HtmlRecordsHomePageOrder)
                 .ToList();
             var model = this.mapper.Map<List<HtmlRecordViewModel>>(htmlRecords);
             return model;

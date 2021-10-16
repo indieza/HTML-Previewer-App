@@ -4,14 +4,10 @@
 
 namespace PreviewerApp.Services.CheckHtmlRecordServices
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
 
     using Ganss.XSS;
 
-    using PreviewerApp.Attributes;
     using PreviewerApp.Constraints;
     using PreviewerApp.Data;
 

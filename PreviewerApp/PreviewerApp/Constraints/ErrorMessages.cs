@@ -4,11 +4,6 @@
 
 namespace PreviewerApp.Constraints
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-
     public class ErrorMessages
     {
         public const string InvalidInputModel = "Invalid input model!";
@@ -20,5 +15,9 @@ namespace PreviewerApp.Constraints
         public const string InvalidHtmlFileSize = "Inserted HTML code should be less than {0} MB";
 
         public const string InvalidHtmlFormat = "Invalid HTML format";
+
+        public const string NotExistingHtmlRecord = "You try to edit not existing HTML Record!";
+
+        public const string NotMadeChangeOverHtmlRecord = "You don't make changes over the HTML Record!";
     }
 }

@@ -4,10 +4,7 @@
 
 namespace PreviewerApp.Services.PreviewHtmlRecordServices
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
 
     using Ganss.XSS;
 

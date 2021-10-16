@@ -4,16 +4,10 @@
 
 namespace PreviewerApp
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-
     using AutoMapper;
 
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.HttpsPolicy;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +17,9 @@ namespace PreviewerApp
     using PreviewerApp.Data;
     using PreviewerApp.Services.CheckHtmlRecordServices;
     using PreviewerApp.Services.CreateHtmlRecordServices;
+    using PreviewerApp.Services.EditHtmlRecordServices;
     using PreviewerApp.Services.HomeServices;
+    using PreviewerApp.Services.HtmlRecordPreviewServices;
     using PreviewerApp.Services.PreviewHtmlRecordServices;
 
     public class Startup
@@ -52,6 +48,8 @@ namespace PreviewerApp
             services.AddTransient<IPreviewHtmlRecordService, PreviewHtmlRecordService>();
             services.AddTransient<ICheckHtmlRecordService, CheckHtmlRecordService>();
             services.AddTransient<IHomeService, HomeService>();
+            services.AddTransient<IEditHtmlRecordService, EditHtmlRecordService>();
+            services.AddTransient<IHtmlRecordPreviewService, HtmlRecordPreviewService>();
 
             // Setup AutoMapper Profiles Configurations
             services.AddScoped(provider => new MapperConfiguration(cfg =>

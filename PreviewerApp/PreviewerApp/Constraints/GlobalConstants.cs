@@ -5,16 +5,15 @@
 namespace PreviewerApp.Constraints
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Linq.Expressions;
-    using System.Threading.Tasks;
 
     using PreviewerApp.Models;
 
     public class GlobalConstants
     {
         public const float MaxHtmlFileSizeInMegabytes = 5.0f;
+
+        public static readonly Expression<Func<HtmlRecord, DateTime>> HtmlRecordsHomePageOrder = x => x.UpdatedOn;
 
         public static Expression<Func<HtmlRecord, bool>> CheckHtmlRecord(string compareHtml)
         {

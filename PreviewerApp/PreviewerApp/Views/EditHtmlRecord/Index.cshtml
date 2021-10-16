@@ -1,0 +1,39 @@
+﻿@model EditHtmlRecordInputModel
+
+@{
+    ViewData["Title"] = "Edit Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Edit HTML</h1>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-area="" asp-controller="EditHtmlRecord" asp-action="Index" asp-route-id="@this.Model.Id" method="post">
+            <div class="form-group">
+                <label asp-for="@this.Model.Html"></label>
+                <textarea asp-for="@this.Model.Html" id="htmlInputField" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="@this.Model.Html" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Edit
+            </button>
+            <button onclick="PreviewInputHtml()" type="button" class="btn btn-success">
+                Run
+            </button>
+            <button onclick="CheckInputHtml()" type="button" class="btn btn-info">
+                Check original
+            </button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <label>Code Preview</label>
+        <div id="HtmlPreviewerDiv"></div>
+    </div>
+    <input type="hidden" />
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
