@@ -4,7 +4,7 @@
 
 ## :hammer: Built With
 - ASP.NET CORE MVC 5
-- Customize Data Field Validation in the Data Model Using Custom Attributes
+- Custom Action and Validation Attributes
 - AutoMapper
 - MSSQL Server
 - Bootstrap
