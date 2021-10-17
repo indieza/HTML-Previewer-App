@@ -10,6 +10,8 @@
 - Bootstrap
 - AJAX real-time Requests
 - jQuery and any kind of jQuery plugins ([DataTables](https://datatables.net/ "DataTables"))
+- [Html Agility Pack](https://html-agility-pack.net/)
+- [HtmlSanitizer ](https://www.nuget.org/packages/HtmlSanitizer/)
 
 ## :dash: How to run it
 - Clone the GitHub Repository
