@@ -26,6 +26,12 @@ namespace PreviewerApp.Controllers
         [Route("/EditHtmlRecord/{id}")]
         public async Task<IActionResult> Index(string id)
         {
+            if (!this.editHtmlRecordService.IsHtmlRecordExist(id))
+            {
+                this.TempData["Error"] = ErrorMessages.NotExistingHtmlRecord;
+                return this.RedirectToAction("Index", nameof(HomeController).Replace("Controller", string.Empty));
+            }
+
             EditHtmlRecordInputModel model = await this.editHtmlRecordService.ExtractHtmlRecord(id);
             return this.View(model);
         }

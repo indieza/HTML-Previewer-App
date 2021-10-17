@@ -27,6 +27,11 @@ namespace PreviewerApp.Services.EditHtmlRecordServices
             this.mapper = mapper;
         }
 
+        public bool IsHtmlRecordExist(string id)
+        {
+            return this.db.HtmlRecords.Any(x => x.Id == id);
+        }
+
         public async Task<EditHtmlRecordInputModel> ExtractHtmlRecord(string id)
         {
             var htmlRecord = await this.db.HtmlRecords.FirstOrDefaultAsync(x => x.Id == id);
@@ -36,9 +41,7 @@ namespace PreviewerApp.Services.EditHtmlRecordServices
 
         public async Task<Tuple<bool, string>> UpdateHtmlRecord(string id, EditHtmlRecordInputModel model)
         {
-            var targetHtmlRecord = await this.db.HtmlRecords.FirstOrDefaultAsync(x => x.Id == id);
-
-            if (targetHtmlRecord == null)
+            if (!this.IsHtmlRecordExist(id))
             {
                 return Tuple.Create(false, ErrorMessages.NotExistingHtmlRecord);
             }
@@ -57,6 +60,7 @@ namespace PreviewerApp.Services.EditHtmlRecordServices
                 return Tuple.Create(false, ErrorMessages.HtmlAlreadyRecordExist);
             }
 
+            var targetHtmlRecord = await this.db.HtmlRecords.FirstOrDefaultAsync(x => x.Id == id);
             targetHtmlRecord.UpdatedOn = model.UpdatedOn;
             targetHtmlRecord.Html = model.HtmlSanitizedContent;
             this.db.HtmlRecords.Update(targetHtmlRecord);
