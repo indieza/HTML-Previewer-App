@@ -42,7 +42,7 @@ namespace PreviewerApp.Controllers
             this.TempData["Success"] = result.Item2;
             return this.RedirectToAction(
                 "Index",
-                nameof(CreateHtmlRecordController).Replace("Controller", string.Empty));
+                nameof(HomeController).Replace("Controller", string.Empty));
         }
     }
 }
