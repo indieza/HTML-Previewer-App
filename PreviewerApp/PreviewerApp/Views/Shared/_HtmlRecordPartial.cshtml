@@ -22,13 +22,13 @@
         <a href="@this.Model.ShareableUrl" target="_blank">
             <input type="button" value="View" class="btn btn-success" />
         </a>
-        <a data-target="#approveDeleteModal" data-toggle="modal">
+        <a data-target="#modal-@this.Model.Id" data-toggle="modal">
             <input type="button" value="Delete" class="btn btn-danger" />
         </a>
     </td>
 </tr>
 
-<div class="modal fade" id="approveDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-@this.Model.Id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
