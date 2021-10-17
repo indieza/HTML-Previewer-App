@@ -10,6 +10,8 @@ namespace PreviewerApp.Services.HtmlRecordPreviewServices
 
     using Microsoft.EntityFrameworkCore;
 
+    using PreviewerApp.ApplicationAttributes.ActionAttributes;
+    using PreviewerApp.Controllers;
     using PreviewerApp.Data;
     using PreviewerApp.ViewModels.HtmlRecord.ViewModels;
 

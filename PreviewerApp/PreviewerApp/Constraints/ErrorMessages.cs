@@ -16,7 +16,11 @@ namespace PreviewerApp.Constraints
 
         public const string InvalidHtmlFormat = "Invalid HTML format";
 
-        public const string NotExistingHtmlRecord = "You try to edit not existing HTML Record!";
+        public const string EditNotExistingHtmlRecord = "You try to edit not existing HTML Record!";
+
+        public const string PreviewNotExistingHtmlRecord = "You try to preview not existing HTML Record!";
+
+        public const string DeleteNotExistingHtmlRecord = "You try to delete not existing HTML Record!";
 
         public const string NotMadeChangeOverHtmlRecord = "You don't make changes over the HTML Record!";
     }

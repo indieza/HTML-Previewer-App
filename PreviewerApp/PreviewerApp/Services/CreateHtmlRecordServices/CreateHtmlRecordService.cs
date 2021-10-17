@@ -35,6 +35,7 @@ namespace PreviewerApp.Services.CreateHtmlRecordServices
                 CreatedOn = model.CreatedOn,
                 UpdatedOn = model.UpdatedOn,
             };
+
             record.ShareableUrl = $"{basePath}/HtmlRecordPreview/{record.Id}";
 
             this.db.HtmlRecords.Add(record);

@@ -8,6 +8,8 @@ namespace PreviewerApp.Controllers
 
     using Microsoft.AspNetCore.Mvc;
 
+    using PreviewerApp.ApplicationAttributes.ActionAttributes;
+    using PreviewerApp.Constraints;
     using PreviewerApp.Services.HtmlRecordPreviewServices;
     using PreviewerApp.ViewModels.HtmlRecord.ViewModels;
 
@@ -22,6 +24,7 @@ namespace PreviewerApp.Controllers
 
         [HttpGet]
         [Route("/HtmlRecordPreview/{id}")]
+        [ExistHtmlRecord("Index", nameof(HomeController), null, ErrorMessages.PreviewNotExistingHtmlRecord)]
         public async Task<IActionResult> Index(string id)
         {
             HtmlRecordPreviewViewModel model = await this.htmlRecordPreviewService.ExtractHtmlRecord(id);

@@ -14,7 +14,5 @@ namespace PreviewerApp.Services.EditHtmlRecordServices
         Task<EditHtmlRecordInputModel> ExtractHtmlRecord(string id);
 
         Task<Tuple<bool, string>> UpdateHtmlRecord(string id, EditHtmlRecordInputModel model);
-
-        bool IsHtmlRecordExist(string id);
     }
 }

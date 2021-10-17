@@ -2,7 +2,7 @@
 // Copyright (c) HTML Reviewer. All rights reserved.
 // </copyright>
 
-namespace PreviewerApp.Attributes
+namespace PreviewerApp.ApplicationAttributes.ValidationAttributes
 {
     using System;
     using System.ComponentModel.DataAnnotations;

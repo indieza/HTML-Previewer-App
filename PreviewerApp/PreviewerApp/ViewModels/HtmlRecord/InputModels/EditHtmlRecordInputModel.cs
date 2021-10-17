@@ -9,7 +9,7 @@ namespace PreviewerApp.ViewModels.HtmlRecord.InputModels
 
     using Ganss.XSS;
 
-    using PreviewerApp.Attributes;
+    using PreviewerApp.ApplicationAttributes.ValidationAttributes;
     using PreviewerApp.Constraints;
 
     public class EditHtmlRecordInputModel

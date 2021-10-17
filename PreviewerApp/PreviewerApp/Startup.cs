@@ -17,6 +17,7 @@ namespace PreviewerApp
     using PreviewerApp.Data;
     using PreviewerApp.Services.CheckHtmlRecordServices;
     using PreviewerApp.Services.CreateHtmlRecordServices;
+    using PreviewerApp.Services.DeleteHtmlRecordServices;
     using PreviewerApp.Services.EditHtmlRecordServices;
     using PreviewerApp.Services.HomeServices;
     using PreviewerApp.Services.HtmlRecordPreviewServices;
@@ -50,6 +51,7 @@ namespace PreviewerApp
             services.AddTransient<IHomeService, HomeService>();
             services.AddTransient<IEditHtmlRecordService, EditHtmlRecordService>();
             services.AddTransient<IHtmlRecordPreviewService, HtmlRecordPreviewService>();
+            services.AddTransient<IDeleteHtmlRecordService, DeleteHtmlRecordSevice>();
 
             // Setup AutoMapper Profiles Configurations
             services.AddScoped(provider => new MapperConfiguration(cfg =>

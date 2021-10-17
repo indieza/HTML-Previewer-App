@@ -9,6 +9,7 @@ namespace PreviewerApp.Controllers
 
     using Microsoft.AspNetCore.Mvc;
 
+    using PreviewerApp.ApplicationAttributes.ActionAttributes;
     using PreviewerApp.Constraints;
     using PreviewerApp.Services.EditHtmlRecordServices;
     using PreviewerApp.ViewModels.HtmlRecord.InputModels;
@@ -24,20 +25,16 @@ namespace PreviewerApp.Controllers
 
         [HttpGet]
         [Route("/EditHtmlRecord/{id}")]
+        [ExistHtmlRecord("Index", nameof(HomeController), null, ErrorMessages.EditNotExistingHtmlRecord)]
         public async Task<IActionResult> Index(string id)
         {
-            if (!this.editHtmlRecordService.IsHtmlRecordExist(id))
-            {
-                this.TempData["Error"] = ErrorMessages.NotExistingHtmlRecord;
-                return this.RedirectToAction("Index", nameof(HomeController).Replace("Controller", string.Empty));
-            }
-
             EditHtmlRecordInputModel model = await this.editHtmlRecordService.ExtractHtmlRecord(id);
             return this.View(model);
         }
 
         [HttpPost]
         [Route("/EditHtmlRecord/{id}")]
+        [ExistHtmlRecord("Index", nameof(HomeController), null, ErrorMessages.EditNotExistingHtmlRecord)]
         public async Task<IActionResult> Index(string id, EditHtmlRecordInputModel model)
         {
             if (this.ModelState.IsValid)
@@ -47,7 +44,9 @@ namespace PreviewerApp.Controllers
                 if (result.Item1)
                 {
                     this.TempData["Success"] = result.Item2;
-                    return this.RedirectToAction("Index", nameof(HomeController).Replace("Controller", string.Empty));
+                    return this.RedirectToAction(
+                        "Index",
+                        nameof(HomeController).Replace("Controller", string.Empty));
                 }
 
                 this.TempData["Error"] = result.Item2;
