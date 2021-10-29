@@ -12,7 +12,7 @@ SELECT @fileDate = CONVERT(NVARCHAR(20),GETDATE(),112)
 DECLARE db_cursor CURSOR READ_ONLY FOR  
 SELECT name 
 FROM master.sys.databases 
-WHERE name IN ('PreviewerApp')  -- exclude these databases
+WHERE name IN ('PreviewerApp')
 AND state = 0 -- database is online
 AND is_in_standby = 0 -- database is not read only for log shipping
  
