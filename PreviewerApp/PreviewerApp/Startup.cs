@@ -37,7 +37,7 @@ namespace PreviewerApp
         {
             // Register Application DB Context
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(this.Configuration.GetConnectionString("Default")));
 
             services.AddAntiforgery(options =>
             {
